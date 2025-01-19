@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    @yield('style')
 </head>
 <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
@@ -24,12 +25,17 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="container-fluid navbar-nav ms-auto">
             <div class="d-flex align-items-center">
-                <a class="nav-link me-3" style=" white-space: nowrap;" href="{{ route('login')}}">Iniciar Sesión</a>
-                <a class="nav-link" href="{{ route('register')}}">Registrarse</a>
+                <a class="nav-link me-3" style=" white-space: nowrap;" href="{{ route('login')}}">Login</a>
+                <a class="nav-link" href="{{ route('register')}}" style=" white-space: nowrap;">Sign Up</a>
             </div>
         </div>
     </div>
 </nav>
+<header>
+    <div class="container-fluid bg-dark text-white d-flex align-items-center mb-3" style="height:150px;">
+        <h1 class="text-start fw-bold fs-2 p-4">@yield('title-header')</h1>
+    </div>
+</header>
 
 <body>
     @yield('body')

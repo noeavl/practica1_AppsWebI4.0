@@ -2,18 +2,21 @@
 @section('title')
 Bienvenido
 @endsection
+@section('title-header')
+Core X Education
+@endsection
 @section('body')
 <div class="container">
     <div class="row my-5">
         <div class="col-6">
             <h1 class="text-start fs-1 fw-bold">
-                <span style="opacity: 0.7;">¡Bienvenido a</span> <span style="color: black;">Core X</span> <span
+                <span style="opacity: 0.7;">¡Welcome to</span> <span style="color: black;">Core X</span> <span
                     style="opacity: 0.7;">Education!</span>
             </h1>
         </div>
         <div class="col-6">
-            <p class="text-start fs-5">Ofrecemos cursos de distintas tecnologías y lenguajes de programación para
-                ayudarte a alcanzar tus metas. ¡Aprender es el primer paso hacia el éxito!</p>
+            <p class="text-start fs-5">We offer courses in various technologies and programming languages to help you
+                achieve your goals. Learning is the first step toward success!</p>
         </div>
     </div>
 </div>
@@ -27,7 +30,7 @@ Bienvenido
 <div class="container">
     <div class="row mt-5">
         <div class="col-12">
-            <h2 class="text-center fs-3 fw-bold">Tecnologías</h2>
+            <h2 class="text-center fs-3 fw-bold">Technologies</h2>
             <div class="d-flex flex-wrap justify-content-center">
                 <div class="m-3 text-center">
                     <i class="fab fa-laravel" style="font-size: 50px;" title="Laravel"></i>
@@ -49,12 +52,13 @@ Bienvenido
                     <i class="fab fa-vuejs" style="font-size: 50px;" title="VueJS"></i>
                     <p class="fw-bold">VueJS</p>
                 </div>
-                <div class="m-3 text-center">
-                    <i class="fab fa-angular" style="font-size: 50px;" title="Angular"></i>
-                    <p class="fw-bold">Angular</p>
-                </div>
+            </div>
+            <div class="m-3 text-center">
+                <i class="fab fa-angular" style="font-size: 50px;" title="Angular"></i>
+                <p class="fw-bold">Angular</p>
             </div>
         </div>
     </div>
+</div>
 </div>
 @endsection
