@@ -27,7 +27,7 @@ class CourseRequest extends FormRequest
             'user_id' => 'required|numeric|exists:users,id',
             'name' => 'required|string|max:50',
             'description' => 'required|string|max:255',
-            'price' => 'required|numeric',
+            'level' => 'required|in:basic,intermediate,advanced',
         ];
     }
 }

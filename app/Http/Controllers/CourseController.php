@@ -11,7 +11,7 @@ class CourseController extends Controller
     public function index()
     {
         return view('courses.layout', [
-            'courses' => Course::where('user_id', Auth::user()->id)->orderBy('created_at', 'desc')->paginate(10)
+            'courses' => Course::orderBy('created_at', 'desc')->paginate(10)
         ]);
     }
     public function create()

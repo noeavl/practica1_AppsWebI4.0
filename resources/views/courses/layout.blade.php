@@ -3,9 +3,9 @@
 Courses
 @endsection
 @section('header')
-<div class="d-flex justify-content-end">
+<div class="d-flex justify-content-end pe-4">
     <a href="{{ route('courses.create')}}" class="btn btn-primary">
-        <i class="fa-solid fa-plus"></i>
+        <i class="fa-solid fa-plus fs-2"></i>
     </a>
 </div>
 @endsection
@@ -15,10 +15,10 @@ Courses
         <thead>
             <tr>
                 <th scope="col">Id</th>
+                <th scope="col">Teacher</th>
                 <th scope="col">Name</th>
                 <th scope="col">Description</th>
-                <th scope="col">Type</th>
-                <th scope="col">Price</th>
+                <th scope="col">Level</th>
                 <th scope="col">Created At</th>
                 <th scope="col">Actions</th>
             </tr>
@@ -30,10 +30,10 @@ Courses
                 @foreach ($courses as $course)
                     <tr>
                         <th scope="row">{{ $course->id }}</th>
+                        <td>{{ $course->user->name }}</td>
                         <td>{{ $course->name }}</td>
                         <td>{{ $course->description }}</td>
-                        <td>{{ $course->type }}</td>
-                        <td>{{ $course->price }}</td>
+                        <td>{{ $course->level }}</td>
                         <td>{{ $course->created_at }}</td>
                         <td>
                             <a href="{{ route('courses.show', $course) }}" class="btn btn-info">

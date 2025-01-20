@@ -37,63 +37,75 @@ Sign Up
                 You only need one account to access all of Core X's services.
             </p>
         </div>
-        @if ($errors->any())
-            <div class="alert alert-danger bg-danger" style="border-radius: 15px; border-width: 0px;">
-                <ul class="mb-0 list-unstyled">
-                    @foreach ($errors->all() as $error)
-                        <li class="text-center text-white">
-                            <i class="fas fa-exclamation-triangle text-white"></i>
-                            {{ $error }}
-                        </li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
         <form action="{{ route('register')}}" method="POST">
             @csrf
             <div class="mb-3 col-12">
-                <input type="text" class="form-control custom-input" id="exampleFormControlInput1" placeholder="Name"
-                    name="name" required>
+                <input type="text" class="form-control custom-input @error('realName') is-invalid @enderror"
+                    id="exampleFormControlInput1" placeholder="Name" name="realName" value="{{ old('realName') }}">
+                @error('realName')
+                    <span class="invalid-feedback" role="alert">
+                        {{ $message }}
+                    </span>
+                @enderror
             </div>
             <div class="row mb-3">
                 <div class="mb-3 col-6">
-                    <input type="text" class="form-control custom-input" id="exampleFormControlInput2" name="apPaterno"
-                        placeholder="Father's last name." required>
+                    <input type="text" class="form-control custom-input @error('apPatern') is-invalid @enderror"
+                        id="exampleFormControlInput2" name="apPatern" placeholder="Father's last name."
+                        value="{{ old('apPatern') }}">
+                    @error('apPaterno')
+                        <span class="invalid-feedback" role="alert">
+                            {{ $message }}
+                        </span>
+                    @enderror
                 </div>
                 <div class="mb-3 col-6">
-                    <input type="text" class="form-control custom-input" id="exampleFormControlInput3" name="apMaterno"
-                        placeholder="Mother's last name." required>
-                </div>
-                <div class="mb-3 col-12">
-                    <select class="form-control custom-input" id="exampleFormControlInput4" name="role"
-                        aria-label="Default select example" required>
-                        <option selected>Select Role</option>
-                        <option value="student">Estudent</option>
-                        <option value="teacher">Teacher</option>
-                    </select>
+                    <input type="text" class="form-control custom-input @error('apMatern') is-invalid @enderror"
+                        id="exampleFormControlInput3" name="apMatern" placeholder="Mother's last name."
+                        value="{{ old('apMatern') }}">
+                    @error('apMaterno')
+                        <span class="invalid-feedback" role="alert">
+                            {{ $message }}
+                        </span>
+                    @enderror
                 </div>
             </div>
             <div class="col-12">
                 <hr>
             </div>
             <div class="mb-3 mt-3 col-12">
-                <input type="text" class="form-control custom-input" id="exampleFormControlInput5" name="name"
-                    placeholder="Username" required>
+                <input type="text" class="form-control custom-input @error('name') is-invalid @enderror"
+                    id="exampleFormControlInput5" name="name" placeholder="Username" value="{{ old('name') }}">
+                @error('name')
+                    <span class="invalid-feedback" role="alert">
+                        {{ $message }}
+                    </span>
+                @enderror
             </div>
             <div class="mb-3 col-12">
-                <input type="email" class="form-control custom-input" id="exampleFormControlInput6" name="email"
-                    placeholder="Email" required>
+                <input type="email" class="form-control custom-input @error('email') is-invalid @enderror"
+                    id="exampleFormControlInput6" name="email" placeholder="Email" value="{{ old('email') }}">
+                @error('email')
+                    <span class="invalid-feedback" role="alert">
+                        {{ $message }}
+                    </span>
+                @enderror
             </div>
             <div class="col-12">
                 <hr>
             </div>
             <div class="mb-3 mt-3 col-12">
-                <input type="password" class="form-control custom-input" id="exampleFormControlInput8" name="password"
-                    placeholder="Password" required>
+                <input type="password" class="form-control custom-input @error('password') is-invalid @enderror"
+                    id="exampleFormControlInput8" name="password" placeholder="Password">
+                @error('password')
+                    <span class="invalid-feedback" role="alert">
+                        {{ $message }}
+                    </span>
+                @enderror
             </div>
             <div class="mb-3 col-12">
                 <input type="password" class="form-control custom-input" id="exampleFormControlInput9"
-                    name="password_confirmation" placeholder="Password Confirmation" required>
+                    name="password_confirmation" placeholder="Password Confirmation">
             </div>
             <div class="my-4 text-center">
                 <a href="{{ route('login')}}" style="text-decoration: none;">

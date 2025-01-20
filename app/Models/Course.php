@@ -10,5 +10,10 @@ class Course extends Model
 {
     use HasFactory, SoftDeletes;
     protected $table = 'Courses';
-    protected $fillable = ['user_id', 'name', 'description'];
+    protected $fillable = ['user_id', 'name', 'description', 'level'];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

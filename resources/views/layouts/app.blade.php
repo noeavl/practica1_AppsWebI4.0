@@ -22,8 +22,8 @@
         @include('layouts.navigation')
         <header>
             <div class="container-fluid bg-dark text-white d-flex align-items-center" style="height: 150px;">
-                <h2 class="text-start fw-bold fs-2 p-4">
-                    @yield('header.title')
+                <h2 class="text-start fw-bold fs-2 p-4 flex-grow-1">
+                    @yield('header.title')  
                 </h2>
                 @yield('header')
             </div>

@@ -55,29 +55,18 @@ Create Course
                     </span>
                 @enderror
             </div>
-            <div class="row">
-                <div class="mb-3 col-6">
-                    <select class="form-control custom-input @error('type') is-invalid @enderror"
-                        id="exampleFormControlInput2" name="type" aria-label="Default select example">
-                        <option selected>Select Type</option>
-                        <option value="free">Free</option>
-                        <option value="paid">Paid</option>
-                    </select>
-                    @error('type')
-                        <span class="invalid-feedback" role="alert">
-                            {{ $message }}
-                        </span>
-                    @enderror
-                </div>
-                <div class="mb-3 col-6">
-                    <input type="number" class="form-control custom-input @error('price') is-invalid @enderror"
-                        id="exampleFormControlInput3" name="price" placeholder="Price">
-                    @error('price')
-                        <span class="invalid-feedback" role="alert">
-                            {{ $message }}
-                        </span>
-                    @enderror
-                </div>
+            <div class="mb-3 col-12">
+                <select name="level" class="form-control custom-input @error('level') is-invalid @enderror"
+                    id="exampleFormControlSelect1">
+                    <option value="basic">Basic</option>
+                    <option value="intermediate">Intermediate</option>
+                    <option value="advanced">Advanced</option>
+                </select>
+                @error('level')
+                    <span class="invalid-feedback" role="alert">
+                        {{ $message }}
+                    </span>
+                @enderror
             </div>
             <div class="col-12 text-center">
                 <button type="submit" class="btn btn-primary w-100">Save</button>

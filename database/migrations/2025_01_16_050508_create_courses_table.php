@@ -17,8 +17,7 @@ return new class extends Migration {
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('name');
             $table->string('description');
-            $table->enum('type', ['free', 'paid'])->default('free');
-            $table->decimal('price', 8, 2)->default(0);
+            $table->enum('level', ['basic', 'intermediate', 'advanced'])->default('basic');
             $table->softDeletes();
             $table->timestamps();
         });
