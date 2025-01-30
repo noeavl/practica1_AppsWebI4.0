@@ -52,8 +52,8 @@ Sign Up
                 <div class="mb-3 col-6">
                     <input type="text" class="form-control custom-input @error('apPatern') is-invalid @enderror"
                         id="exampleFormControlInput2" name="apPatern" placeholder="Father's last name."
-                        value="{{ old('apPatern') }}">
-                    @error('apPaterno')
+                        value="{{ old('apPatern') }}" maxlength="255">
+                    @error('apPatern')
                         <span class="invalid-feedback" role="alert">
                             {{ $message }}
                         </span>
@@ -62,8 +62,8 @@ Sign Up
                 <div class="mb-3 col-6">
                     <input type="text" class="form-control custom-input @error('apMatern') is-invalid @enderror"
                         id="exampleFormControlInput3" name="apMatern" placeholder="Mother's last name."
-                        value="{{ old('apMatern') }}">
-                    @error('apMaterno')
+                        value="{{ old('apMatern') }}" maxlength="255">
+                    @error('apMatern')
                         <span class="invalid-feedback" role="alert">
                             {{ $message }}
                         </span>

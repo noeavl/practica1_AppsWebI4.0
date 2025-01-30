@@ -21,8 +21,9 @@ class CourseController extends Controller
     public function store(CourseRequest $request)
     {
         Course::create($request->validated());
-        return redirect()->route('courses.index')->with('success', 'Course created successfully');
+        return redirect()->route('courses.create')->with('msg', 'Course created successfully');
     }
+
     public function show(Course $course)
     {
         return view('courses.show', compact('course'));
@@ -34,11 +35,11 @@ class CourseController extends Controller
     public function update(CourseRequest $request, Course $course)
     {
         $course->update($request->validated());
-        return redirect()->route('courses.index')->with('success', 'Course updated successfully');
+        return redirect()->route('courses.edit', $course)->with('msg', 'Course updated successfully');
     }
     public function destroy(Course $course)
     {
         $course->delete();
-        return redirect()->route('courses.index')->with('success', 'Course deleted successfully');
+        return redirect()->route('courses.index')->with('msg', 'Course deleted successfully');
     }
 }

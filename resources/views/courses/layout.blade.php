@@ -1,4 +1,33 @@
 @extends('layouts.app')
+@section('style')
+<style>
+    .alert {
+        border-radius: 15px;
+        background-color: rgb(0, 170, 93);
+        text-align: center;
+        color: white;
+        font-weight: bold;
+        border: none;
+        position: fixed;
+        bottom: 0;
+        width: 500px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 9999;
+        animation: invisible 6s forwards;
+    }
+
+    @keyframes invisible {
+        0% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0;
+        }
+    }
+</style>
+@endsection
 @section('header.title')
 Courses
 @endsection
@@ -82,5 +111,10 @@ Courses
     <div>
         {{ $courses->links() }}
     </div>
+    @if (session('msg'))
+        <div class="alert alert-success" role="alert">
+            {{ session('msg') }}
+        </div>
+    @endif
 </div>
 @endsection
